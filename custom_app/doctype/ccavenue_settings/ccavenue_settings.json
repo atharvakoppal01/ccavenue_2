@@ -1,0 +1,145 @@
+{
+    "actions": [],
+    "creation": "2024-01-01 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "payment_gateway_section",
+        "is_enabled",
+        "gateway_name",
+        "column_break_3",
+        "test_mode",
+        "section_break_5",
+        "merchant_id",
+        "access_code",
+        "working_key",
+        "currency_section",
+        "currency",
+        "supported_currencies",
+        "url_section",
+        "success_url",
+        "failure_url",
+        "cancel_url"
+    ],
+    "fields": [
+        {
+            "fieldname": "payment_gateway_section",
+            "fieldtype": "Section Break",
+            "label": "Payment Gateway Settings"
+        },
+        {
+            "default": "0",
+            "fieldname": "is_enabled",
+            "fieldtype": "Check",
+            "label": "Is Enabled"
+        },
+        {
+            "default": "CCAvenue",
+            "fieldname": "gateway_name",
+            "fieldtype": "Data",
+            "label": "Gateway Name",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_3",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "1",
+            "fieldname": "test_mode",
+            "fieldtype": "Check",
+            "label": "Test Mode"
+        },
+        {
+            "fieldname": "section_break_5",
+            "fieldtype": "Section Break",
+            "label": "API Credentials"
+        },
+        {
+            "fieldname": "merchant_id",
+            "fieldtype": "Data",
+            "label": "Merchant ID",
+            "mandatory_depends_on": "is_enabled"
+        },
+        {
+            "fieldname": "access_code",
+            "fieldtype": "Data",
+            "label": "Access Code",
+            "mandatory_depends_on": "is_enabled"
+        },
+        {
+            "fieldname": "working_key",
+            "fieldtype": "Password",
+            "label": "Working Key",
+            "mandatory_depends_on": "is_enabled"
+        },
+        {
+            "fieldname": "currency_section",
+            "fieldtype": "Section Break",
+            "label": "Currency Settings"
+        },
+        {
+            "default": "INR",
+            "fieldname": "currency",
+            "fieldtype": "Link",
+            "label": "Default Currency",
+            "options": "Currency"
+        },
+        {
+            "description": "Comma separated list of supported currencies (e.g., INR, USD, EUR)",
+            "fieldname": "supported_currencies",
+            "fieldtype": "Small Text",
+            "label": "Supported Currencies"
+        },
+        {
+            "fieldname": "url_section",
+            "fieldtype": "Section Break",
+            "label": "Callback URLs"
+        },
+        {
+            "fieldname": "success_url",
+            "fieldtype": "Data",
+            "label": "Success URL"
+        },
+        {
+            "fieldname": "failure_url",
+            "fieldtype": "Data",
+            "label": "Failure URL"
+        },
+        {
+            "fieldname": "cancel_url",
+            "fieldtype": "Data",
+            "label": "Cancel URL"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "issingle": 1,
+    "links": [],
+    "modified": "2024-01-01 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Custom App",
+    "name": "CCavenue Settings",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "read": 1,
+            "role": "Accounts Manager"
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+}

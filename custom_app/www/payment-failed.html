@@ -1,0 +1,26 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-danger">
+                <div class="panel-heading text-center">
+                    <h3><i class="fa fa-times-circle text-danger"></i> Payment Failed!</h3>
+                </div>
+                <div class="panel-body text-center">
+                    <p class="lead">{{ frappe.form_dict.reason or "Your payment could not be processed." }}</p>
+                    {% if frappe.form_dict.order_id %}
+                    <p>Order ID: <strong>{{ frappe.form_dict.order_id }}</strong></p>
+                    {% endif %}
+                    <p>Please try again or contact support if the problem persists.</p>
+                    <div class="mt-4">
+                        <a href="/cart" class="btn btn-primary">Return to Cart</a>
+                        <a href="/contact" class="btn btn-default">Contact Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+<div class="payment-form">
+    <h4>CCAvenue Payment</h4>
+    <p>You will be redirected to CCAvenue secure payment gateway.</p>
+    <form method="post" action="{{ payment_url }}">
+        <input type="hidden" name="encRequest" value="{{ enc_request }}">
+        <input type="hidden" name="access_code" value="{{ access_code }}">
+        <button type="submit" class="btn btn-primary btn-lg">
+            <i class="fa fa-credit-card"></i> Pay with CCAvenue
+        </button>
+    </form>
+</div>

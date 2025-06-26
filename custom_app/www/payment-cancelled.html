@@ -1,0 +1,26 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-warning">
+                <div class="panel-heading text-center">
+                    <h3><i class="fa fa-exclamation-triangle text-warning"></i> Payment Cancelled</h3>
+                </div>
+                <div class="panel-body text-center">
+                    <p class="lead">Your payment has been cancelled.</p>
+                    {% if frappe.form_dict.order_id %}
+                    <p>Order ID: <strong>{{ frappe.form_dict.order_id }}</strong></p>
+                    {% endif %}
+                    <p>You can retry the payment or continue shopping.</p>
+                    <div class="mt-4">
+                        <a href="/cart" class="btn btn-primary">Return to Cart</a>
+                        <a href="/" class="btn btn-default">Continue Shopping</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
